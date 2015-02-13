@@ -8,6 +8,6 @@
       return strtoupper($sound);
     }
     
-    abstract function sound();
+    abstract function sound();    //"contract"
   }
 ?>
