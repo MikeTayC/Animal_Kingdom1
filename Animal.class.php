@@ -10,6 +10,6 @@
       return strtoupper($sound);
     }
     
-    abstract function sound();    //"contract"
+    abstract public $sound;    //"contract"
   }
 ?>
