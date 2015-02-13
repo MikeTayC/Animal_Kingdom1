@@ -3,10 +3,7 @@
   
   class Cow extends Animal
   {
-    function sound()      //concrete manipulation is mandatory
-    {
-      return "Moo!";
-    }
+     $this->sound = "Moo!";
   }
   
 ?>
