@@ -2,9 +2,9 @@
 
   abstract class Animal
   {
-    abstract public $animalName;
+    public $animalName;
     
-    abstract public $sound;
+    public $sound;
     
     function speak() 
     {
