@@ -2,14 +2,13 @@
 
   abstract class Animal
   {
-    public $animalName = "";
+    abstract public $animalName;
+    
+    abstract public $sound;
     
     function speak() 
     {
-      $sound = $this->sound();  //exists in child class by "contract"
       return strtoupper($sound);
     }
-    
-    abstract public $sound;    //"contract"
   }
 ?>
