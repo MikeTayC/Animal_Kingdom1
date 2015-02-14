@@ -18,10 +18,8 @@
                 <label class="checkbox">
                    <input name="cow" type="checkbox"/> Cow?
                 </label> 
-
                 <label>Name</label>
                 <input name="name" type="text"/>
-
                 <input type="submit" values="MAKE"/>
             </fieldset>
          </form>
