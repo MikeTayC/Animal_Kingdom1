@@ -1,5 +1,13 @@
 <!DOCTYPE html>
-
+<?php
+    if(isset($_POST))
+    {
+        function __autoload($filename)  
+        {
+            require_once $filename . '.php';
+        }
+    }
+?>
 <html>
     <head>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -7,16 +15,16 @@
     </head>
     <body style="margin: 20px;">
         <h1>ANIMAL MAKER 5000</h1>
-        <form action="maker.php" method="post">
+        <form action="index.php" method="post">
             <fieldset>
-                <label class="checkbox">
-                   <input name="cat" type="checkbox"/> Cat?
+                <label class="radio">
+                   <input name="Animal" type="radio"  value = "Cat.class" /> Cat
                 </label> 
-                <label class="checkbox">
-                   <input name="dog" type="checkbox"/> Dog?
+                <label class="radio">
+                   <input name="Animal" type="radio" value = "Dog.class" /> Dog
                 </label> 
-                <label class="checkbox">
-                   <input name="cow" type="checkbox"/> Cow?
+                <label class="radio">
+                   <input name="Animal" type="radio" value = "Cow.class" /> Cow
                 </label> 
                 <label>Name</label>
                 <input name="name" type="text"/>
