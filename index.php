@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <?php
+    function my_autoloader($class) 
+    {
+        $filename = 'classes/' . $class . '.class.php';
+        if (is_readable($filename)) 
+        {
+            require $filename;
+        }
+    }        
+    
+    spl_autoload_register('my_autoloader');
+    
     if(isset($_POST))
     {
-        function my_autoloader($class) 
+        switch ($_POST["animal"]) 
         {
-            $filename = 'classes/' . $class . '.class.php';
-            if (is_readable($filename)) 
-            {
-                require $filename;
-            }
-        }
-        spl_autoload_register('my_autoloader');
+            case "Cat":
+                $newCat = Cat($_POST['name'])
+                break;
+            case "Dog":
+                $newDog = Dog($_POST['name'])
+                break;
+            case "Cow":
+                $newCow = Cow($_POST['name'])
+                break;
+            default :
+                echo "You didn't pick an animal!";
+        }    
     }
 ?>
 <html>
@@ -23,13 +39,13 @@
         <form action="index.php" method="post">
             <fieldset>
                 <label class="radio">
-                   <input name="Animal" type="radio"  value = "Cat.class" /> Cat
+                   <input name="animal" type="radio"  value = "Cat" /> Cat
                 </label> 
                 <label class="radio">
-                   <input name="Animal" type="radio" value = "Dog.class" /> Dog
+                   <input name="animal" type="radio" value = "Dog" /> Dog
                 </label> 
                 <label class="radio">
-                   <input name="Animal" type="radio" value = "Cow.class" /> Cow
+                   <input name="animal" type="radio" value = "Cow" /> Cow
                 </label> 
                 <label>Name</label>
                 <input name="name" type="text"/>
