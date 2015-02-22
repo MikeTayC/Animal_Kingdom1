@@ -6,4 +6,9 @@
      $this->sound = "Moo!";
   }
   
+  public function __construct($name)
+  {
+    this->animalName = $name;
+  }
+  
 ?>
