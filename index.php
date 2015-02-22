@@ -2,10 +2,15 @@
 <?php
     if(isset($_POST))
     {
-        function __autoload($filename)  
+        function my_autoloader($class) 
         {
-            require_once $filename . '.php';
+            $filename = 'classes/' . $class . '.class.php';
+            if (is_readable($filename)) 
+            {
+                require $filename;
+            }
         }
+        spl_autoload_register('my_autoloader');
     }
 ?>
 <html>
