@@ -10,5 +10,7 @@
     {
       return strtoupper($sound);
     }
+    
+    abstract public function __construct();
   }
 ?>
