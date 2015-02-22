@@ -1,33 +1,23 @@
 <!DOCTYPE html>
 <?php
-    function my_autoloader($class) 
-    {
-        $filename = 'classes/' . $class . '.class.php';
-        if (is_readable($filename)) 
-        {
-            require $filename;
-        }
-    }        
-    
-    spl_autoload_register('my_autoloader');
-    
-    if(isset($_POST))
-    {
-        switch ($_POST["animal"]) 
-        {
-            case "Cat":
-                $newCat = Cat($_POST['name'])
-                break;
-            case "Dog":
-                $newDog = Dog($_POST['name'])
-                break;
-            case "Cow":
-                $newCow = Cow($_POST['name'])
-                break;
-            default :
-                echo "You didn't pick an animal!";
-        }    
-    }
+function my_autoloader($class) {
+$filename = 'classes/' . $class . '.class.php';
+if (is_readable($filename)) {
+require $filename;
+}
+}        
+spl_autoload_register('my_autoloader');
+if(isset($_POST)) {
+switch ($_POST["animal"]) {
+case "Cat": $newCat = Cat($_POST['name'])
+break;
+case "Dog": $newDog = Dog($_POST['name'])
+break;
+case "Cow": $newCow = Cow($_POST['name'])
+break;
+default : echo "You didn't pick an animal!";
+}    
+}
 ?>
 <html>
     <head>
