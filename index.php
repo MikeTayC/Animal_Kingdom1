@@ -18,7 +18,6 @@ break;
 default : echo "You didn't pick an animal!";
 }    
 }
-?>
 <html>
     <head>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
